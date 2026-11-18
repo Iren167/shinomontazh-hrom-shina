@@ -1,7 +1,7 @@
 /* Изюминки с доски Pinterest для шиномонтажа: хромовое стекло, контурный шрифт, колесо, подбор радиуса */
 :root { --bar-h: 64px; --x-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; --x-ease: cubic-bezier(.2, .8, .2, 1); --x-glow: color-mix(in srgb, var(--c-accent) 38%, transparent); }
 html { scroll-padding-top: calc(var(--bar-h) + 12px); scroll-behavior: smooth; }
-body { background: radial-gradient(circle at 12% 0, #16212f 0, transparent 38%), radial-gradient(circle at 100% 30%, #1b2735 0, transparent 34%), var(--c-canvas); background-attachment: fixed; }
+body { background: radial-gradient(circle at 12% 0, #16212f 0, transparent 38%), radial-gradient(circle at 100% 30%, #1b2735 0, transparent 34%), var(--c-canvas); }
 
 /* ---------- закреплённое меню ---------- */
 .s-bar { position: fixed; top: 0; left: 0; right: 0; min-height: var(--bar-h); z-index: 50; background: color-mix(in srgb, var(--c-canvas) 62%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); border-bottom: 1px solid var(--hair); }
@@ -79,3 +79,6 @@ body { padding-top: var(--bar-h); }
 
 /* заголовок без переносов слов */
 .s-hero h1 { hyphens: none; -webkit-hyphens: none; overflow-wrap: normal; word-break: normal; }
+
+/* iOS/touch: fixed background janks, enable only with mouse */
+@media (hover:hover) and (pointer:fine){ body { background-attachment: fixed; } }
